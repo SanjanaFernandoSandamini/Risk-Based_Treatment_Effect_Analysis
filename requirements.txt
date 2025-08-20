@@ -1,1 +1,19 @@
+dplyr
+tidyr
+purrr
+stringr
+ggplot2
+forcats
+broom
+car
+bestNormalize
+brglm2
+logistf
+glmnet
+pROC
+DescTools
+rsample
+yardstick
+rms
+moments
 
