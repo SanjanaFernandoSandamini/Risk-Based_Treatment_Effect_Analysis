@@ -62,3 +62,22 @@ Customers who already had a higher baseline probability of conversion benefited 
    ```r
    ControlsOnly <- df[df$treatment == 0, ]
    fit_ctrl <- glm(conversion ~ ., data = ControlsOnly, family = binomial())
+## 🔍 What is Baseline Risk?
+
+**Baseline risk** is the probability that a customer would convert **even without** receiving any treatment or promotion. It measures each customer's natural likelihood to buy on their own.
+
+- High baseline risk = likely to convert anyway
+- Low baseline risk = unlikely to convert without help
+
+This is important because two customers can respond differently to the same treatment depending on their baseline risk.
+
+---
+
+## 🛠 How the Baseline Risk Model Was Built
+
+We estimated baseline risk using a logistic regression model trained only on control (untreated) customers:
+
+1. Filtered dataset to include rows where `treatment = 0`.
+2. Ran a logistic regression:
+   ```r
+   fit_ctrl <- glm(conversion ~ ., data = controls_only, family = binomial())
