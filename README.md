@@ -81,3 +81,22 @@ We estimated baseline risk using a logistic regression model trained only on con
 2. Ran a logistic regression:
    ```r
    fit_ctrl <- glm(conversion ~ ., data = controls_only, family = binomial())
+# Risk-Based Subgroup Analysis
+
+This repository implements **Risk-Based Subgroup Analysis** for analyzing heterogeneous treatment effects.
+
+## Project Steps
+1. Load and preprocess data
+2. Fit baseline risk model on control group
+3. Score baseline risk for all individuals
+4. Create risk-based subgroups (quartiles by default)
+5. Estimate treatment effects within each subgroup
+6. Visualize treatment effect by risk group
+7. Export results
+
+## Requirements
+- R >= 4.2
+- Packages: dplyr, tidyr, purrr, stringr, ggplot2, forcats, broom,
+  car, bestNormalize, brglm2, logistf, glmnet, pROC, DescTools,
+  rsample, yardstick, rms, moments
+
